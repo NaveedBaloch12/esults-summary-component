@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hanken Grotesk';
+    font-weight: 500;
+
+}
+
+:root {
+    --Light_red: hsl(0, 100%, 67%);
+    --Orangey_yellow: hsl(39, 100%, 56%);
+    --Green_teal: hsl(166, 100%, 37%);
+    --Cobalt_blue: hsl(234, 85%, 45%);
+
+    --Light_red_bg: hsla(0, 100%, 67%, 0.1);
+    --Orangey_yellow_bg: hsla(39, 100%, 56%, 0.1);
+    --Green_teal_bg: hsla(166, 100%, 37%, 0.1);
+    --Cobalt_blue_bg: hsla(234, 85%, 45%, 0.1);
+
+    --Light_slate_blue_background: hsl(252, 100%, 67%);
+    --Light_royal_blue_background: hsl(241, 81%, 54%);
+    --Violet_blue_circle: hsla(256, 72%, 46%, 1);
+    --Persian_blue_circle: hsla(241, 72%, 46%, 0);
+
+    --White: hsl(0, 0%, 100%);
+    --Pale_blue: hsl(222, 100%, 92%);
+    --Light_lavender: hsl(241, 100%, 89%);
+    --Dark_gray_blue: hsl(224, 30%, 27%);
+
+    --slate_royle_blue_gradient: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    --violent_persion_blue_gradient: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ======= Adjusting fonts for bigger and smaller screens ===== */
+
+.heading {
+    font-size: clamp(1rem, 2vw, 5rem);
+    margin-block: 1rem;
+    /* font-size: 1.6rem; */
+}
+
+.result_heading {
+    color: var(--Pale_blue);
+}
+
+.para {
+    font-size: clamp(14px, 1.3vw - 4px, 2rem);
+}
+
+.result_score h1 {
+    text-align: center;
+    margin: 1rem;
+    font-size: 1.8rem;
+    color: var(--Pale_blue);
+}
+
+.result_score p {
+    text-align: center;
+    margin: 1rem;
+    color: var(--Pale_blue);
+}
+
+
+
+/* ============================================================ */
+
+
+.main_contanier {
+    --section_rds: 1.5rem;
+    align-items: center;
+    flex-direction: column;
+    border-radius: var(--section_rds);
+
+}
+
+/* ================ Section 1 ============ */
+.result_section {
+    flex-direction: column;
+    border-radius: 0rem 0rem var(--section_rds) var(--section_rds);
+    background-image: var(--slate_royle_blue_gradient);
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+
+
+.result_circle {
+    flex-direction: column;
+    border-radius: 50%;
+    padding: 1rem;
+    margin-block: 2rem;
+    background-image: var(--violent_persion_blue_gradient);
+    color: var(--Pale_blue);
+    aspect-ratio: 1;
+    height: 8rem;
+}
+
+.result_circle span {
+    color: var(--White);
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+
+/* =================== Section 2 ================== */
+
+.summary_section {
+    flex-direction: column;
+    width: 80%;
+}
+
+.details_dox {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0px;
+    border-radius: 8px;
+    justify-content: space-between;
+}
+
+.detail_heading svg {
+    margin-inline: 0px 12px;
+}
+
+.summary_details {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.detail_numbrers {
+    color: rgba(0, 0, 0, 0.673);
+}
+
+.detail_numbrers>span {
+    color: black;
+}
+
+.button {
+    padding: 8px;
+    border-radius: 3rem;
+    width: 100%;
+    margin-block: 1.5rem 1rem;
+    color: var(--White);
+    background-color: var(--Dark_gray_blue);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.button:hover {
+    background-image: var(--violent_persion_blue_gradient);
+}
+
+.details_box_1 {
+    background-color: var(--Light_red_bg);
+}
+
+.details_box_2 {
+    background-color: var(--Orangey_yellow_bg);
+}
+
+.details_box_3 {
+    background-color: var(--Green_teal_bg);
+}
+
+.details_box_4 {
+    background-color: var(--Cobalt_blue_bg);
+}
+
+/* ================================================ */
+
+
+@media (min-width: 800px) {
+
+    /* =================== Section 1 ================== */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .main_contanier {
+        --section_rds: 1.5rem;
+        flex-direction: row;
+        width: min(60%, 100rem);
+        border-radius: var(--section_rds);
+        box-shadow: .5rem .5rem .8rem rgba(0, 0, 0, 0.1);
+    }
+
+    .section {
+        width: 50%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .result_section {
+        border-radius: var(--section_rds);
+        background-image: var(--slate_royle_blue_gradient);
+        padding: 1rem 4rem;
+    }
+
+
+
+    /* =================== Section 2 ================== */
+
+    .summary_section {
+        padding: 1rem 2rem;
+        align-items: flex-start;
+    }
+}
